@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCSE Physics Revision Hub — P1, P2 & P3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-200 selection:bg-indigo-500 selection:text-white">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <!-- Brand & Title -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-lg sm:text-xl font-extrabold tracking-tight leading-tight">GCSE Physics Mock Hub</h1>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Complete P1–P3 Syllabus &amp; Equations Vault</p>
+            </div>
+          </div>
+
+          <!-- Mobile Theme Toggle -->
+          <button id="themeToggleMobile" aria-label="Toggle Dark Mode" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+            <svg class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-5 h-5 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+        </div>
+
+        <!-- Main View Switcher + Actions -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div class="inline-flex p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 w-full sm:w-auto">
+            <button data-view="equations" class="view-tab flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center justify-center gap-2 bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              Equations Vault
+            </button>
+            <button data-view="notes" class="view-tab flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              Topic Notes &amp; RAG
+            </button>
+          </div>
+
+          <button id="openQuizBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-sm shadow-indigo-500/25 transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Flashcard Quiz
+          </button>
+
+          <!-- Desktop Theme Toggle -->
+          <button id="themeToggleDesktop" aria-label="Toggle Dark Mode" class="hidden md:flex p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+            <svg class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-5 h-5 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- Top Controls: Search, Topic Filter & RAG Progress Summary -->
+    <section class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <!-- Search Input -->
+        <div class="relative flex-1">
+          <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input id="searchInput" type="text" placeholder="Search equations, symbols (e.g. Hooke, moments, Brownian, Snell, v = fλ)..." class="w-full pl-11 pr-10 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+          <button id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">Clear</button>
+        </div>
+
+        <!-- Topic Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button data-topic="ALL" class="topic-filter px-3.5 py-2 rounded-xl text-xs font-bold transition bg-slate-900 text-white dark:bg-white dark:text-slate-900">All Topics</button>
+          <button data-topic="P1" class="topic-filter px-3.5 py-2 rounded-xl text-xs font-bold transition bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60 hover:bg-blue-100 dark:hover:bg-blue-900/50">P1: Motion, Forces &amp; Energy</button>
+          <button data-topic="P2" class="topic-filter px-3.5 py-2 rounded-xl text-xs font-bold transition bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/50">P2: Thermal Physics</button>
+          <button data-topic="P3" class="topic-filter px-3.5 py-2 rounded-xl text-xs font-bold transition bg-purple-50 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60 hover:bg-purple-100 dark:hover:bg-purple-900/50">P3: Waves</button>
+        </div>
+      </div>
+
+      <!-- RAG Checklist Readiness Bar -->
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-3 text-xs font-medium text-slate-600 dark:text-slate-400">
+          <span class="font-bold text-slate-800 dark:text-slate-200">Syllabus RAG Tracker:</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> <span id="greenCount">0</span> Green</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> <span id="amberCount">0</span> Amber</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> <span id="redCount">0</span> Red</span>
+        </div>
+        <div class="flex items-center gap-3 flex-1 max-w-md">
+          <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
+            <div id="barGreen" class="bg-emerald-500 h-full transition-all duration-300" style="width: 0%"></div>
+            <div id="barAmber" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
+            <div id="barRed" class="bg-rose-500 h-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <span id="masteryPct" class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 w-10 text-right">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 1: EQUATIONS VAULT -->
+    <section id="equationsView" class="space-y-5">
+      <!-- Filter & Helper Banner -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200/80 dark:border-indigo-800/50 rounded-2xl p-4">
+        <div class="space-y-1">
+          <h2 class="text-base font-bold text-indigo-950 dark:text-indigo-200">Complete Formula Sheet &amp; Hidden Exam Equations</h2>
+          <p class="text-xs sm:text-sm text-indigo-800/80 dark:text-indigo-300/80">
+            Includes every formula explicitly stated in your checklist <strong>plus</strong> implied equations (like Principle of Moments, Average Speed, and Constants) you need for full marks.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <select id="sheetStatusFilter" class="px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="ALL">Show All Equations (19)</option>
+            <option value="EXPLICIT">Listed in Checklist (14)</option>
+            <option value="IMPLIED">Implied / Rearranged / Constants (5)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Equations Grid -->
+      <div id="equationsGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: TOPIC REVISION NOTES & RAG CHECKLIST -->
+    <section id="notesView" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-lg font-extrabold tracking-tight">Structured Exam Revision Notes</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Rate each subtopic Red, Amber, or Green as you revise. Click any section to expand/collapse.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="expandAllBtn" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition">Expand All</button>
+          <button id="collapseAllBtn" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition">Collapse All</button>
+        </div>
+      </div>
+
+      <div id="topicsContainer" class="space-y-4">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-lg text-xs font-bold flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+    <span id="toastText">Copied to clipboard!</span>
+  </div>
+
+  <!-- Flashcard Quiz Modal -->
+  <div id="quizModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-lg w-full p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span id="quizBadge" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">P1</span>
+          <span id="quizCounter" class="text-xs font-mono text-slate-500">Card 1 / 20</span>
+        </div>
+        <button id="closeQuizBtn" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Flashcard Box -->
+      <div id="flashcardBox" class="min-h-[210px] rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center justify-center text-center cursor-pointer select-none transition hover:border-indigo-400">
+        <p id="flashcardLabel" class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">Question / Prompt</p>
+        <div id="flashcardContent" class="text-lg sm:text-xl font-bold leading-snug"></div>
+        <p id="flashcardHint" class="text-xs text-slate-400 mt-4">Tap card to reveal answer</p>
+      </div>
+
+      <div class="flex items-center justify-between gap-3">
+        <button id="prevCardBtn" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">← Previous</button>
+        <button id="flipCardBtn" class="flex-1 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition">Flip Card</button>
+        <button id="nextCardBtn" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. COMPLETE EQUATIONS DATABASE (P1 - P3)
+    // ==========================================
+    const equationsData = [
+      {
+        id: "eq-speed",
+        topic: "P1",
+        subtopic: "P1.2 Motion",
+        name: "Speed",
+        formula: "v = s / t",
+        rearrangements: ["s = v × t", "t = s / v"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "v", desc: "Speed", unit: "m/s" },
+          { sym: "s", desc: "Distance travelled", unit: "m" },
+          { sym: "t", desc: "Time taken", unit: "s" }
+        ],
+        tip: "Also equal to the gradient of a straight-line section on a distance–time graph."
+      },
+      {
+        id: "eq-avg-speed",
+        topic: "P1",
+        subtopic: "P1.2 Motion",
+        name: "Average Speed",
+        formula: "v_avg = Total s / Total t",
+        rearrangements: ["Total s = v_avg × Total t"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "v_avg", desc: "Average speed", unit: "m/s" },
+          { sym: "Total s", desc: "Total distance travelled", unit: "m" },
+          { sym: "Total t", desc: "Total time taken (including stops)", unit: "s" }
+        ],
+        tip: "Always use the total journey time, even if the object was stationary for part of it."
+      },
+      {
+        id: "eq-accel",
+        topic: "P1",
+        subtopic: "P1.2 Motion",
+        name: "Acceleration",
+        formula: "a = Δv / Δt = (v - u) / t",
+        rearrangements: ["Δv = a × t", "v = u + at", "t = (v - u) / a"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "a", desc: "Acceleration (negative = deceleration)", unit: "m/s²" },
+          { sym: "Δv", desc: "Change in velocity/speed (v - u)", unit: "m/s" },
+          { sym: "u / v", desc: "Initial speed (u) & Final speed (v)", unit: "m/s" },
+          { sym: "t", desc: "Time taken", unit: "s" }
+        ],
+        tip: "Found from the gradient of a speed–time graph. Area under a speed–time graph = distance!"
+      },
+      {
+        id: "eq-weight",
+        topic: "P1",
+        subtopic: "P1.3 Mass & Weight",
+        name: "Weight & Gravitational Field Strength",
+        formula: "W = m × g   (or g = W / m)",
+        rearrangements: ["m = W / g", "g = W / m"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "W", desc: "Weight (gravitational force)", unit: "N" },
+          { sym: "m", desc: "Mass (quantity of matter)", unit: "kg" },
+          { sym: "g", desc: "Gravitational field strength (≈ 9.8 N/kg on Earth)", unit: "N/kg (or m/s²)" }
+        ],
+        tip: "g on Earth is 9.8 N/kg, which is numerically equal to free-fall acceleration (9.8 m/s²)."
+      },
+      {
+        id: "eq-density",
+        topic: "P1",
+        subtopic: "P1.4 Density",
+        name: "Density",
+        formula: "ρ = m / V",
+        rearrangements: ["m = ρ × V", "V = m / ρ"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "ρ", desc: "Density (rho)", unit: "kg/m³ or g/cm³" },
+          { sym: "m", desc: "Mass", unit: "kg or g" },
+          { sym: "V", desc: "Volume", unit: "m³ or cm³" }
+        ],
+        tip: "An object floats if its density is less than the liquid's density (ρ_object < ρ_liquid)."
+      },
+      {
+        id: "eq-force",
+        topic: "P1",
+        subtopic: "P1.5.1 Effects of Forces",
+        name: "Resultant Force (Newton's 2nd Law)",
+        formula: "F = m × a",
+        rearrangements: ["m = F / a", "a = F / m"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "F", desc: "Resultant force", unit: "N" },
+          { sym: "m", desc: "Mass", unit: "kg" },
+          { sym: "a", desc: "Acceleration (same direction as F)", unit: "m/s²" }
+        ],
+        tip: "Find the resultant force first by subtracting opposing forces before dividing by mass."
+      },
+      {
+        id: "eq-hooke",
+        topic: "P1",
+        subtopic: "P1.5.1 Effects of Forces",
+        name: "Hooke's Law (Spring Constant)",
+        formula: "F = k × x   (or k = F / x)",
+        rearrangements: ["k = F / x", "x = F / k"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "F", desc: "Force / Load applied", unit: "N" },
+          { sym: "k", desc: "Spring constant (stiffness)", unit: "N/m or N/cm" },
+          { sym: "x", desc: "Extension (stretched length − original length)", unit: "m or cm" }
+        ],
+        tip: "Only obeys Hooke's Law up to the Limit of Proportionality (where the graph stops being straight)."
+      },
+      {
+        id: "eq-moment",
+        topic: "P1",
+        subtopic: "P1.5.2 Turning Effect of Forces",
+        name: "Moment of a Force",
+        formula: "Moment = F × d",
+        rearrangements: ["F = Moment / d", "d = Moment / F"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "Moment", desc: "Turning effect of a force", unit: "N m (Newton-metres)" },
+          { sym: "F", desc: "Force applied", unit: "N" },
+          { sym: "d", desc: "Perpendicular distance from the pivot", unit: "m" }
+        ],
+        tip: "Convert cm to m if the question asks for the answer in N m!"
+      },
+      {
+        id: "eq-equilibrium",
+        topic: "P1",
+        subtopic: "P1.5.2 Turning Effect of Forces",
+        name: "Principle of Moments (Equilibrium)",
+        formula: "F₁ × d₁ = F₂ × d₂",
+        rearrangements: ["Sum of Clockwise Moments = Sum of Anticlockwise Moments"],
+        status: "IMPLIED",
+        statusLabel: "Essential Exam Rule",
+        variables: [
+          { sym: "F₁, F₂", desc: "Forces on opposite sides of the pivot", unit: "N" },
+          { sym: "d₁, d₂", desc: "Perpendicular distances to the pivot", unit: "m or cm" }
+        ],
+        tip: "For full equilibrium: (1) No resultant force AND (2) No resultant moment."
+      },
+      {
+        id: "eq-ke",
+        topic: "P1",
+        subtopic: "P1.6.1 Energy",
+        name: "Kinetic Energy",
+        formula: "Eₖ = ½ × m × v²",
+        rearrangements: ["m = 2Eₖ / v²", "v = √(2Eₖ / m)"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "Eₖ", desc: "Kinetic energy store", unit: "J (Joules)" },
+          { sym: "m", desc: "Mass", unit: "kg" },
+          { sym: "v", desc: "Speed", unit: "m/s" }
+        ],
+        tip: "Common trap: Only the speed (v) is squared, NOT ½ × m!"
+      },
+      {
+        id: "eq-gpe",
+        topic: "P1",
+        subtopic: "P1.6.1 Energy",
+        name: "Change in Gravitational Potential Energy",
+        formula: "ΔEₚ = m × g × Δh",
+        rearrangements: ["m = ΔEₚ / (g × Δh)", "Δh = ΔEₚ / (m × g)"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "ΔEₚ", desc: "Change in gravitational potential energy", unit: "J" },
+          { sym: "m", desc: "Mass", unit: "kg" },
+          { sym: "g", desc: "Gravitational field strength (9.8 N/kg)", unit: "N/kg" },
+          { sym: "Δh", desc: "Change in vertical height", unit: "m" }
+        ],
+        tip: "When an object falls without air resistance, ΔEₚ lost = Eₖ gained."
+      },
+      {
+        id: "eq-work",
+        topic: "P1",
+        subtopic: "P1.6.2 Work",
+        name: "Mechanical Work Done",
+        formula: "W = F × d = ΔE",
+        rearrangements: ["F = W / d", "d = W / F"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "W", desc: "Work done", unit: "J (Joules)" },
+          { sym: "F", desc: "Force acting in direction of motion", unit: "N" },
+          { sym: "d", desc: "Distance moved in direction of force", unit: "m" },
+          { sym: "ΔE", desc: "Energy transferred", unit: "J" }
+        ],
+        tip: "1 Joule of work is done when a force of 1 N moves an object by 1 m."
+      },
+      {
+        id: "eq-efficiency",
+        topic: "P1",
+        subtopic: "P1.6.3 Energy Resources",
+        name: "Efficiency",
+        formula: "Efficiency = (Useful Output / Total Input) × 100%",
+        rearrangements: ["Useful Output = (Efficiency / 100) × Total Input"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "Output", desc: "Useful energy output (J) OR useful power output (W)", unit: "J or W" },
+          { sym: "Input", desc: "Total energy input (J) OR total power input (W)", unit: "J or W" }
+        ],
+        tip: "Efficiency can never be greater than 100% (or 1.0 as a decimal)."
+      },
+      {
+        id: "eq-power",
+        topic: "P1",
+        subtopic: "P1.6.4 Power",
+        name: "Power",
+        formula: "P = W / t   or   P = ΔE / t",
+        rearrangements: ["W = P × t", "ΔE = P × t", "t = ΔE / P"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "P", desc: "Power (rate of energy transfer)", unit: "W (Watts = J/s)" },
+          { sym: "W / ΔE", desc: "Work done / Energy transferred", unit: "J" },
+          { sym: "t", desc: "Time taken", unit: "s" }
+        ],
+        tip: "1 Watt = 1 Joule transferred per second."
+      },
+      {
+        id: "eq-pressure",
+        topic: "P1",
+        subtopic: "P1.7 Pressure",
+        name: "Pressure on a Surface",
+        formula: "p = F / A",
+        rearrangements: ["F = p × A", "A = F / p"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "p", desc: "Pressure", unit: "Pa (Pascals = N/m²)" },
+          { sym: "F", desc: "Force acting perpendicular to surface", unit: "N" },
+          { sym: "A", desc: "Area of contact", unit: "m² or cm²" }
+        ],
+        tip: "Smaller area = higher pressure (e.g., sharp knife); larger area = lower pressure (e.g., snowshoes)."
+      },
+      {
+        id: "eq-water-temps",
+        topic: "P2",
+        subtopic: "P2.2.2 Melting & Boiling",
+        name: "Standard Phase Change Points of Water",
+        formula: "Melting = 0 °C   |   Boiling = 100 °C",
+        rearrangements: ["Freezing = 0 °C   |   Condensing = 100 °C"],
+        status: "IMPLIED",
+        statusLabel: "Key Exam Constants",
+        variables: [
+          { sym: "0 °C", desc: "Pure water melting/freezing point at standard pressure", unit: "°C" },
+          { sym: "100 °C", desc: "Pure water boiling/condensing point at standard pressure", unit: "°C" }
+        ],
+        tip: "During melting and boiling, temperature stays CONSTANT while thermal energy breaks bonds."
+      },
+      {
+        id: "eq-wave-speed",
+        topic: "P3",
+        subtopic: "P3.1 General Properties of Waves",
+        name: "Wave Speed Equation",
+        formula: "v = f × λ",
+        rearrangements: ["f = v / λ", "λ = v / f"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "v", desc: "Wave speed", unit: "m/s" },
+          { sym: "f", desc: "Frequency (waves per second)", unit: "Hz (Hertz)" },
+          { sym: "λ", desc: "Wavelength (lambda)", unit: "m" }
+        ],
+        tip: "Remember: 1 kHz = 1,000 Hz. Human hearing range is 20 Hz to 20,000 Hz (20 kHz)."
+      },
+      {
+        id: "eq-refraction",
+        topic: "P3",
+        subtopic: "P3.2.2 Refraction of Light",
+        name: "Refractive Index (Snell's Law)",
+        formula: "n = sin(i) / sin(r)",
+        rearrangements: ["sin(i) = n × sin(r)", "sin(r) = sin(i) / n"],
+        status: "EXPLICIT",
+        statusLabel: "In Checklist",
+        variables: [
+          { sym: "n", desc: "Refractive index (no unit, always ≥ 1)", unit: "No unit" },
+          { sym: "i", desc: "Angle of incidence (measured from Normal)", unit: "degrees (°)" },
+          { sym: "r", desc: "Angle of refraction (measured from Normal)", unit: "degrees (°)" }
+        ],
+        tip: "Make sure your calculator is in DEG (degrees) mode, NOT radians!"
+      },
+      {
+        id: "eq-refractive-speed",
+        topic: "P3",
+        subtopic: "P3.2.2 Refraction of Light",
+        name: "Refractive Index & Wave Speeds / Critical Angle",
+        formula: "n = c / v   |   sin(c) = 1 / n",
+        rearrangements: ["v = c / n", "n = 1 / sin(c)"],
+        status: "IMPLIED",
+        statusLabel: "Checklist Definition",
+        variables: [
+          { sym: "n", desc: "Refractive index of medium", unit: "No unit" },
+          { sym: "c", desc: "Speed of light in vacuum/air (3.0 × 10⁸ m/s)", unit: "m/s" },
+          { sym: "v", desc: "Speed of light in the medium (e.g. glass/water)", unit: "m/s" },
+          { sym: "c (angle)", desc: "Critical angle (when r = 90°)", unit: "degrees (°)" }
+        ],
+        tip: "Checklist states: Define n as the ratio of speeds of a wave in two different regions."
+      }
+    ];
+
+    // ==========================================
+    // 2. COMPLETE SYLLABUS NOTES DATABASE (P1-P3)
+    // ==========================================
+    const topicsData = [
+      {
+        id: "P1.1",
+        topic: "P1",
+        title: "P1.1 Physical Quantities & Measurement Techniques",
+        bullets: [
+          {
+            heading: "Measuring Length, Volume & Time",
+            points: [
+              "<strong>Length:</strong> Use a ruler; avoid <em>parallax error</em> by viewing the scale straight-on at 90° and measure from the zero mark.",
+              "<strong>Volume:</strong> Use a measuring cylinder; read from the bottom of the <em>meniscus</em> at eye level.",
+              "<strong>Short intervals / Small distances:</strong> Measure multiples and divide! E.g., measure the thickness of 100 sheets of paper and divide by 100; time 20 oscillations of a pendulum and divide by 20 to find the period (T) and reduce human reaction-time error."
+            ]
+          },
+          {
+            heading: "Scalars vs Vectors",
+            points: [
+              "<strong>Scalar:</strong> Has <strong>magnitude (size) only</strong>. Memorise list: <em>distance, speed, time, mass, energy, temperature</em>.",
+              "<strong>Vector:</strong> Has <strong>both magnitude and direction</strong>. Memorise list: <em>force, weight, velocity, acceleration, gravitational field strength</em>."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.2",
+        topic: "P1",
+        title: "P1.2 Motion & Motion Graphs",
+        bullets: [
+          {
+            heading: "Distance–Time Graphs",
+            points: [
+              "<strong>Horizontal flat line:</strong> Object is at rest (stationary).",
+              "<strong>Straight sloped line:</strong> Constant speed. <strong>Gradient = Speed</strong> (Δs / Δt).",
+              "<strong>Curving upward:</strong> Accelerating (getting steeper). <strong>Curving leveling off:</strong> Decelerating."
+            ]
+          },
+          {
+            heading: "Speed–Time Graphs",
+            points: [
+              "<strong>Line on x-axis (v = 0):</strong> At rest. <strong>Horizontal flat line (v > 0):</strong> Constant speed.",
+              "<strong>Straight upward slope:</strong> Constant acceleration. <strong>Straight downward slope:</strong> Constant deceleration (negative acceleration).",
+              "<strong>Gradient = Acceleration</strong> (Δv / Δt).",
+              "<strong>Area under graph = Distance travelled</strong> (split into rectangles and triangles: ½ × base × height)."
+            ]
+          },
+          {
+            heading: "Free Fall",
+            points: [
+              "Near Earth's surface, free-fall acceleration is approximately constant at <strong>g = 9.8 m/s²</strong> (ignoring air resistance)."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.3-1.4",
+        topic: "P1",
+        title: "P1.3 Mass, Weight & P1.4 Density",
+        bullets: [
+          {
+            heading: "Mass vs Weight",
+            points: [
+              "<strong>Mass (kg):</strong> Measure of the quantity of matter in an object (stays the same anywhere in the universe).",
+              "<strong>Weight (N):</strong> The gravitational force acting on an object with mass (<em>W = mg</em>). Measured with a newtonmeter/force meter.",
+              "<strong>Gravitational field strength (g):</strong> Gravitational force per unit mass (<em>g = W/m ≈ 9.8 N/kg</em> on Earth), equivalent to free-fall acceleration."
+            ]
+          },
+          {
+            heading: "Measuring Density (ρ = m / V)",
+            points: [
+              "<strong>Liquid:</strong> Weigh empty measuring cylinder, add liquid, re-weigh to find mass; read volume from cylinder; compute ρ = m/V.",
+              "<strong>Regular solid:</strong> Weigh on top-pan balance; measure length × width × height with ruler; compute ρ = m/V.",
+              "<strong>Irregular solid (that sinks):</strong> Weigh solid. Fill measuring cylinder with water (record V₁), gently submerge solid, record V₂. Volume = V₂ − V₁ (or use a displacement/eureka can).",
+              "<strong>Floating vs Sinking:</strong> An object <strong>floats</strong> if its density is less than the fluid's density (ρ_object < ρ_liquid), and <strong>sinks</strong> if ρ_object > ρ_liquid."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.5.1",
+        topic: "P1",
+        title: "P1.5.1 Effects of Forces & Hooke's Law",
+        bullets: [
+          {
+            heading: "Resultant Forces, Friction & Newton's Laws",
+            points: [
+              "Forces can change an object's <strong>size, shape, or motion</strong>.",
+              "<strong>Resultant force:</strong> Add forces in the same direction; subtract forces in opposite directions.",
+              "<strong>Newton's 1st Law:</strong> An object remains at rest or moves in a straight line at constant speed unless acted on by a resultant force.",
+              "<strong>Newton's 2nd Law:</strong> <em>F = ma</em>. Resultant force and acceleration always act in the same direction.",
+              "<strong>Friction & Drag:</strong> Friction opposes motion between surfaces and produces heating. Drag (e.g., air resistance in gases or water resistance in liquids) opposes objects moving through fluids."
+            ]
+          },
+          {
+            heading: "Hooke's Law & Load–Extension Graphs",
+            points: [
+              "<strong>Experiment:</strong> Clamp a spring with a ruler next to it. Measure original length. Add 1 N slotted masses one by one, recording total length and calculating <em>extension = new length − original length</em>.",
+              "<strong>Spring constant (k = F / x):</strong> Force per unit extension (stiffness of the spring).",
+              "<strong>Limit of proportionality:</strong> The point on a load–extension graph where the straight line begins to curve. Up to this point, extension is directly proportional to load."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.5.2-1.5.3",
+        topic: "P1",
+        title: "P1.5.2 Moments & P1.5.3 Centre of Gravity",
+        bullets: [
+          {
+            heading: "Moments & Equilibrium",
+            points: [
+              "<strong>Moment:</strong> A measure of the turning effect of a force (e.g. opening a door, using a spanner or seesaw). <em>Moment = F × perpendicular distance from pivot</em>.",
+              "<strong>Equilibrium conditions:</strong> An object is in equilibrium when there is <strong>(1) no resultant force</strong> AND <strong>(2) no resultant moment</strong> (clockwise moments = anticlockwise moments)."
+            ]
+          },
+          {
+            heading: "Centre of Gravity & Stability",
+            points: [
+              "<strong>Centre of gravity:</strong> The single point through which the whole weight of an object appears to act. For uniform regular shapes (blocks, spheres, cylinders), it is at the geometric centre.",
+              "<strong>Irregular lamina experiment:</strong> Hang the card freely from a pin near one edge alongside a plumb line. Draw the vertical line along the string. Repeat from two other holes—where the lines intersect is the centre of gravity.",
+              "<strong>Stability:</strong> An object is more stable if it has a <strong>lower centre of gravity</strong> and a <strong>wider base</strong> (it topples when the vertical line through its CoG falls outside its base)."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.6",
+        topic: "P1",
+        title: "P1.6 Energy, Work, Energy Resources & Power",
+        bullets: [
+          {
+            heading: "Energy Stores, Transfers & Conservation",
+            points: [
+              "<strong>7 Energy Stores:</strong> Kinetic, Gravitational Potential, Chemical, Elastic (strain), Nuclear, Electrostatic, Internal (thermal).",
+              "<strong>Transfer Pathways:</strong> Mechanical work (forces), Electrical work (currents), Heating, and Waves (EM, sound, etc.).",
+              "<strong>Conservation of Energy:</strong> Energy cannot be created or destroyed, only transferred between stores."
+            ]
+          },
+          {
+            heading: "Energy Resources (How Electricity is Generated)",
+            points: [
+              "<strong>Boiler → Turbine → Generator:</strong> Fossil fuels (coal, oil, gas), biofuels, nuclear fission, and geothermal heat water into steam to spin a turbine connected to a generator.",
+              "<strong>Direct Turbine → Generator:</strong> Wind turbines, hydroelectric dams (gravitational PE of water), tidal barrages, and wave generators spin turbines directly.",
+              "<strong>Solar:</strong> <em>Solar cells (photovoltaic)</em> convert light directly into electricity; <em>solar thermal collectors</em> use infrared to heat water.",
+              "<strong>Origin of Energy:</strong> The <strong>Sun</strong> (via nuclear fusion) is the source for almost all energy resources <strong>EXCEPT geothermal, nuclear, and tidal</strong>.",
+              "<strong>Fission vs Fusion:</strong> Nuclear reactors use <strong>nuclear fission</strong> (splitting heavy nuclei); the Sun uses <strong>nuclear fusion</strong> (joining light nuclei)."
+            ]
+          },
+          {
+            heading: "Pros & Cons of Energy Resources",
+            points: [
+              "<strong>Fossil fuels:</strong> Reliable, high output, cheap, non-renewable, releases CO₂ (global warming) & SO₂ (acid rain).",
+              "<strong>Nuclear:</strong> Reliable, huge output, no CO₂, non-renewable, radioactive waste & high decommissioning cost.",
+              "<strong>Wind / Solar:</strong> Renewable, no CO₂ during operation, unreliable (weather/daylight dependent), low energy density (needs large area).",
+              "<strong>Hydroelectric / Tidal:</strong> Renewable, reliable, high output, floods habitats/estuaries, high initial build cost."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P1.7",
+        topic: "P1",
+        title: "P1.7 Pressure",
+        bullets: [
+          {
+            heading: "Pressure in Everyday Life (p = F / A)",
+            points: [
+              "<strong>High Pressure (small area):</strong> Sharp knives, drawing pins, and stiletto heels concentrate force onto a tiny area so they cut or sink easily.",
+              "<strong>Low Pressure (large area):</strong> Snowshoes, skis, caterpillar tracks on excavators, and wide camel feet spread weight over a large area to prevent sinking."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P2.1",
+        topic: "P2",
+        title: "P2.1 States of Matter & Particle Model",
+        bullets: [
+          {
+            heading: "Solids, Liquids & Gases",
+            points: [
+              "<strong>Solid:</strong> Tightly packed in a regular lattice; strong forces; particles vibrate about fixed positions. Fixed shape & volume.",
+              "<strong>Liquid:</strong> Close together but irregular arrangement; weaker forces; particles slide past each other. Fixed volume, takes shape of container.",
+              "<strong>Gas:</strong> Far apart; negligible forces; particles move randomly at high speeds. Fills container, easily compressed.",
+              "<strong>Temperature & Motion:</strong> Higher temperature = higher average kinetic energy of particles (they move faster)."
+            ]
+          },
+          {
+            heading: "Brownian Motion & Gas Pressure",
+            points: [
+              "<strong>Brownian motion:</strong> Random, jerky motion of visible smoke particles or pollen grains viewed under a microscope—caused by random collisions with much smaller, fast-moving air/water molecules.",
+              "<strong>Gas pressure:</strong> Caused by gas particles colliding with the walls of the container, exerting a force per unit area.",
+              "<strong>Constant Volume (↑ Temperature):</strong> Particles move faster → collide with walls <em>more frequently</em> and <em>with greater force</em> → pressure increases.",
+              "<strong>Constant Temperature (↓ Volume):</strong> Particles have less space → collide with walls <em>more frequently</em> → pressure increases."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P2.2",
+        topic: "P2",
+        title: "P2.2 Thermal Expansion, Boiling & Evaporation",
+        bullets: [
+          {
+            heading: "Thermal Expansion",
+            points: [
+              "When heated at constant pressure, particles vibrate/move faster and push further apart: <strong>Gases expand most > Liquids > Solids expand least</strong>.",
+              "<strong>Applications & Consequences:</strong> Liquid-in-glass thermometers (liquid expands up tube), bimetallic strips in thermostats, expansion gaps in bridges/railway tracks, sagging overhead cables in summer."
+            ]
+          },
+          {
+            heading: "Melting, Boiling & Evaporation",
+            points: [
+              "<strong>Melting (0°C for water) & Boiling (100°C for water):</strong> Energy input is used to overcome intermolecular forces rather than increase kinetic energy, so <strong>temperature stays constant</strong>.",
+              "<strong>Evaporation:</strong> Occurs at <em>any temperature</em> at the <em>surface</em> of a liquid when the most energetic particles escape. Because average KE of remaining particles drops, <strong>evaporation causes cooling</strong>.",
+              "<strong>Factors increasing evaporation rate:</strong> Higher temperature, larger surface area, and increased air movement (draught/wind) over the surface."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P2.3",
+        topic: "P2",
+        title: "P2.3 Thermal Energy Transfer (Conduction, Convection, Radiation)",
+        bullets: [
+          {
+            heading: "Conduction & Convection",
+            points: [
+              "<strong>Conduction (mainly solids):</strong> Particles vibrate and pass energy to neighbours via lattice vibrations. <strong>Metals</strong> are much better conductors because they also have <strong>delocalised (mobile) electrons</strong> that move rapidly through the lattice. Non-metals (wood, plastic, trapped air) are good insulators.",
+              "<strong>Convection (fluids: liquids & gases):</strong> Fluid is heated → expands → becomes <strong>less dense</strong> → rises. Cooler, denser fluid sinks to take its place, setting up a <em>convection current</em>."
+            ]
+          },
+          {
+            heading: "Infrared Radiation & Earth's Temperature",
+            points: [
+              "<strong>Thermal radiation:</strong> Transfer of energy by <strong>infrared waves</strong>; requires <strong>no medium</strong> (travels through the vacuum of space).",
+              "<strong>Surface effects:</strong> <strong>Dull black</strong> surfaces are the best absorbers and best emitters. <strong>Shiny white/silver</strong> surfaces are the worst absorbers/emitters and best reflectors.",
+              "<strong>Experiments:</strong> <em>Leslie's cube</em> filled with hot water + thermopile/IR detector tests emission from different surfaces; metal plates with wax-glued corks facing a heater test absorption.",
+              "<strong>Earth's Temperature:</strong> Affected by the balance between incoming solar radiation absorbed and outgoing infrared radiation emitted back to space."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P3.1",
+        topic: "P3",
+        title: "P3.1 General Properties of Waves",
+        bullets: [
+          {
+            heading: "Wave Terminology & Types",
+            points: [
+              "Waves transfer <strong>energy without transferring matter</strong>.",
+              "<strong>Amplitude:</strong> Maximum displacement from rest position to crest/trough. <strong>Wavelength (λ):</strong> Distance between two consecutive crests. <strong>Frequency (f):</strong> Number of waves passing a point per second (Hz).",
+              "<strong>Transverse waves:</strong> Vibrations are <strong>perpendicular (at 90°)</strong> to direction of energy transfer. Examples: <em>EM waves (light), water waves, seismic S-waves</em>.",
+              "<strong>Longitudinal waves:</strong> Vibrations are <strong>parallel</strong> to direction of energy transfer. Examples: <em>Sound waves, seismic P-waves</em>."
+            ]
+          },
+          {
+            heading: "Reflection, Refraction & Diffraction",
+            points: [
+              "<strong>Reflection:</strong> Wave bounces off a plane barrier (wavelength, frequency, and speed stay unchanged).",
+              "<strong>Refraction:</strong> Wave changes direction when entering a medium where its speed changes (e.g., water waves entering shallower water slow down and bend toward the normal).",
+              "<strong>Diffraction:</strong> Spreading out of waves when passing through a gap or around an obstacle. Greatest diffraction occurs when <strong>gap width ≈ wavelength</strong>."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P3.2",
+        topic: "P3",
+        title: "P3.2 Reflection, Refraction & Dispersion of Light",
+        bullets: [
+          {
+            heading: "Reflection in a Plane Mirror",
+            points: [
+              "<strong>Law of Reflection:</strong> Angle of incidence (<em>i</em>) = Angle of reflection (<em>r</em>), both measured from the <strong>Normal</strong> (90° line to surface).",
+              "<strong>Plane mirror image properties:</strong> Virtual (cannot be projected onto a screen; rays only appear to diverge from behind mirror), same size as object, same distance behind mirror as object is in front, and <strong>laterally inverted</strong>."
+            ]
+          },
+          {
+            heading: "Refraction, Total Internal Reflection (TIR) & Dispersion",
+            points: [
+              "<strong>Refraction:</strong> Light entering a denser medium (air → glass) slows down and bends <strong>towards the normal</strong> (r < i). Leaving glass → air, it speeds up and bends <strong>away from the normal</strong>.",
+              "<strong>Critical Angle & TIR:</strong> When light travels from a denser to a less dense medium (glass → air) and <em>i = critical angle</em>, angle of refraction <em>r = 90°</em>. If <em>i > critical angle</em>, <strong>Total Internal Reflection</strong> occurs (all light reflects inside). Used in <strong>optical fibres</strong> (telecommunications & medical endoscopes).",
+              "<strong>Dispersion:</strong> White light refracts through a triangular glass prism into 7 colours because different colours travel at slightly different speeds in glass. Order from lowest frequency / longest wavelength to highest frequency / shortest wavelength: <strong>Red, Orange, Yellow, Green, Blue, Indigo, Violet (ROYGBIV)</strong>."
+            ]
+          }
+        ]
+      },
+      {
+        id: "P3.4",
+        topic: "P3",
+        title: "P3.4 Sound",
+        bullets: [
+          {
+            heading: "Production, Pitch, Loudness & Speed of Sound",
+            points: [
+              "Sound is produced by <strong>vibrating sources</strong> and is a <strong>longitudinal wave</strong> consisting of <strong>compressions</strong> (high pressure, particles close together) and <strong>rarefactions</strong> (low pressure, particles spread apart).",
+              "<strong>Medium required:</strong> Sound cannot travel through a vacuum (no particles to vibrate). Speed order: <strong>Solids (fastest) > Liquids > Gases (slowest, ~330–340 m/s in air)</strong>.",
+              "<strong>Loudness & Pitch:</strong> Larger <strong>amplitude</strong> = louder sound. Higher <strong>frequency</strong> = higher pitch.",
+              "<strong>Frequency Ranges:</strong> Human audible range = <strong>20 Hz to 20 kHz (20,000 Hz)</strong>. <strong>Ultrasound</strong> = frequency > 20 kHz.",
+              "<strong>Echoes & Measuring Speed:</strong> An echo is a reflection of sound. Stand a known distance <em>d</em> from a wall, clap, time the echo: <em>Speed = (2 × d) / t</em>."
+            ]
+          }
+        ]
+      }
+    ];
+
+    // ==========================================
+    // 3. FLASHCARD QUIZ BANK (20 QUESTIONS)
+    // ==========================================
+    const flashcardsData = [
+      { topic: "P1", q: "State the equation for Hooke's Law and define 'limit of proportionality'.", a: "F = k × x (or k = F / x). The limit of proportionality is the point on a load–extension graph where the straight line stops and begins to curve (extension is no longer directly proportional to force)." },
+      { topic: "P1", q: "What are the TWO conditions required for an object to be in equilibrium?", a: "1) No resultant force acting on the object.\n2) No resultant moment (sum of clockwise moments = sum of anticlockwise moments)." },
+      { topic: "P1", q: "List all 6 Scalar quantities required by your syllabus.", a: "Distance, speed, time, mass, energy, and temperature." },
+      { topic: "P1", q: "List all 5 Vector quantities required by your syllabus.", a: "Force, weight, velocity, acceleration, and gravitational field strength." },
+      { topic: "P1", q: "How do you find speed and distance from motion graphs?", a: "• Distance–time graph: Gradient = Speed.\n• Speed–time graph: Gradient = Acceleration, and Area under the graph = Distance travelled." },
+      { topic: "P1", q: "What is the formula for Kinetic Energy and Gravitational Potential Energy?", a: "Kinetic Energy: Eₖ = ½mv²\nGravitational Potential Energy: ΔEₚ = mgΔh" },
+      { topic: "P1", q: "Which 3 energy resources do NOT get their energy originally from the Sun?", a: "Geothermal, Nuclear, and Tidal." },
+      { topic: "P1", q: "How do you find the centre of gravity of an irregularly shaped plane lamina?", a: "Suspend it freely from a pin near an edge with a plumb line hanging beside it. Mark the vertical line. Repeat from two more points; the intersection of the lines is the centre of gravity." },
+      { topic: "P1", q: "What is the condition for an object to float in a liquid?", a: "The object's density must be less than the density of the liquid (ρ_object < ρ_liquid)." },
+      { topic: "P2", q: "Explain Brownian motion and what it proves.", a: "The random, jerky movement of visible smoke particles or pollen grains in a fluid, caused by random collisions with much smaller, fast-moving gas/liquid molecules. It is evidence for the kinetic particle model." },
+      { topic: "P2", q: "Using particles, explain why gas pressure increases when heated at constant volume.", a: "Particles gain kinetic energy and move faster, so they collide with the container walls more frequently and with greater force (creating a larger force per unit area)." },
+      { topic: "P2", q: "Why does evaporation cause cooling of a liquid?", a: "The most energetic particles escape from the surface of the liquid, lowering the average kinetic energy of the remaining particles (which lowers the temperature)." },
+      { topic: "P2", q: "How does thermal conduction occur in metals compared to non-metals?", a: "Both transfer energy via lattice vibrations, but metals also have delocalised (mobile) electrons that move through the lattice and transfer energy much faster." },
+      { topic: "P2", q: "Explain how a convection current forms in a liquid or gas.", a: "When heated, the fluid expands, becomes less dense, and rises. Cooler, denser fluid sinks to replace it, creating a continuous circulation." },
+      { topic: "P2", q: "Which surface is the best absorber and emitter of infrared radiation? Which is the best reflector?", a: "• Best absorber & emitter: Dull black surface.\n• Best reflector (worst absorber/emitter): Shiny white or silver surface." },
+      { topic: "P3", q: "State the wave speed equation and define transverse vs longitudinal waves.", a: "v = f × λ. Transverse vibrations are perpendicular (90°) to wave travel (e.g., light, S-waves). Longitudinal vibrations are parallel to wave travel (e.g., sound, P-waves)." },
+      { topic: "P3", q: "List 4 properties of the image formed by a plane mirror.", a: "1) Virtual\n2) Same size as the object\n3) Same distance behind the mirror as the object is in front\n4) Laterally inverted" },
+      { topic: "P3", q: "State Snell's Law and the two conditions for Total Internal Reflection (TIR).", a: "n = sin(i) / sin(r). TIR happens when: 1) Light travels from a denser to a less dense medium, AND 2) Angle of incidence > critical angle." },
+      { topic: "P3", q: "List the 7 colours of the visible spectrum from longest wavelength to shortest wavelength.", a: "Red, Orange, Yellow, Green, Blue, Indigo, Violet (ROYGBIV). (Note: Red has longest λ & lowest f; Violet has shortest λ & highest f)." },
+      { topic: "P3", q: "What is the human audible frequency range, and how do sound speeds compare in solids, liquids, and gases?", a: "Human hearing: 20 Hz to 20 kHz (ultrasound is > 20 kHz). Speed order: Fastest in solids > liquids > slowest in gases." }
+    ];
+
+    // ==========================================
+    // 4. APPLICATION STATE & DOM REFERENCES
+    // ==========================================
+    let currentView = "equations";
+    let currentTopic = "ALL";
+    let searchQuery = "";
+    let sheetFilter = "ALL";
+    let ragState = JSON.parse(localStorage.getItem("gcse_physics_rag") || "{}");
+    let quizIndex = 0;
+    let isCardFlipped = false;
+
+    const equationsGrid = document.getElementById("equationsGrid");
+    const topicsContainer = document.getElementById("topicsContainer");
+    const searchInput = document.getElementById("searchInput");
+    const clearSearchBtn = document.getElementById("clearSearchBtn");
+    const sheetStatusFilter = document.getElementById("sheetStatusFilter");
+
+    // ==========================================
+    // 5. THEME TOGGLE
+    // ==========================================
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle("dark");
+      localStorage.setItem("gcse_physics_theme", html.classList.contains("dark") ? "dark" : "light");
+    }
+    if (localStorage.getItem("gcse_physics_theme") === "light") {
+      document.documentElement.classList.remove("dark");
+    }
+    document.getElementById("themeToggleMobile").addEventListener("click", toggleTheme);
+    document.getElementById("themeToggleDesktop").addEventListener("click", toggleTheme);
+
+    // ==========================================
+    // 6. TOAST NOTIFICATION
+    // ==========================================
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toastText").textContent = msg;
+      toast.classList.remove("translate-y-20", "opacity-0");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0");
+      }, 2200);
+    }
+
+    function copyFormula(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      showToast(`Copied: ${text}`);
+    }
+
+    // ==========================================
+    // 7. RAG TRACKER LOGIC
+    // ==========================================
+    function updateRagSummary() {
+      const total = topicsData.length;
+      let green = 0, amber = 0, red = 0;
+      topicsData.forEach(t => {
+        const status = ragState[t.id];
+        if (status === "green") green++;
+        else if (status === "amber") amber++;
+        else if (status === "red") red++;
+      });
+
+      document.getElementById("greenCount").textContent = green;
+      document.getElementById("amberCount").textContent = amber;
+      document.getElementById("redCount").textContent = red;
+
+      document.getElementById("barGreen").style.width = `${(green / total) * 100}%`;
+      document.getElementById("barAmber").style.width = `${(amber / total) * 100}%`;
+      document.getElementById("barRed").style.width = `${(red / total) * 100}%`;
+      document.getElementById("masteryPct").textContent = `${Math.round((green / total) * 100)}%`;
+    }
+
+    function setRagStatus(topicId, status) {
+      if (ragState[topicId] === status) {
+        delete ragState[topicId];
+      } else {
+        ragState[topicId] = status;
+      }
+      localStorage.setItem("gcse_physics_rag", JSON.stringify(ragState));
+      updateRagSummary();
+      renderTopics();
+    }
+
+    // ==========================================
+    // 8. RENDER EQUATIONS
+    // ==========================================
+    function getTopicBadgeClasses(topic) {
+      if (topic === "P1") return "bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border-blue-200 dark:border-blue-800/60";
+      if (topic === "P2") return "bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border-amber-200 dark:border-amber-800/60";
+      return "bg-purple-100 text-purple-800 dark:bg-purple-950/80 dark:text-purple-300 border-purple-200 dark:border-purple-800/60";
+    }
+
+    function renderEquations() {
+      const q = searchQuery.toLowerCase().trim();
+      const filtered = equationsData.filter(eq => {
+        if (currentTopic !== "ALL" && eq.topic !== currentTopic) return false;
+        if (sheetFilter !== "ALL" && eq.status !== sheetFilter) return false;
+        if (!q) return true;
+        const haystack = [
+          eq.name,
+          eq.subtopic,
+          eq.formula,
+          eq.tip,
+          ...eq.rearrangements,
+          ...eq.variables.map(v => `${v.sym} ${v.desc} ${v.unit}`)
+        ].join(" ").toLowerCase();
+        return haystack.includes(q);
+      });
+
+      if (filtered.length === 0) {
+        equationsGrid.innerHTML = `
+          <div class="col-span-full bg-white dark:bg-slate-900 rounded-2xl p-10 text-center border border-slate-200 dark:border-slate-800">
+            <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">No equations match your current filter or search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      equationsGrid.innerHTML = filtered.map(eq => {
+        const badgeStyle = getTopicBadgeClasses(eq.topic);
+        const statusStyle = eq.status === "EXPLICIT"
+          ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60"
+          : "bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-950/60 dark:text-fuchsia-300 border-fuchsia-200 dark:border-fuchsia-800/60";
+
+        return `
+          <article class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm hover:shadow-md hover:border-indigo-300 dark:hover:border-indigo-700 transition flex flex-col justify-between gap-4">
+            <div class="space-y-3">
+              <!-- Top Badges -->
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="px-2.5 py-0.5 rounded-lg text-[11px] font-bold border ${badgeStyle}">${eq.subtopic}</span>
+                <span class="px-2.5 py-0.5 rounded-lg text-[11px] font-semibold border ${statusStyle}">${eq.statusLabel}</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">${eq.name}</h3>
+
+              <!-- Formula Box -->
+              <div class="relative group rounded-xl bg-slate-900 dark:bg-slate-950 text-white p-3.5 border border-slate-800 flex items-center justify-between gap-2">
+                <code class="font-mono text-base sm:text-lg font-bold text-indigo-300 tracking-tight">${eq.formula}</code>
+                <button onclick="copyFormula('${eq.formula.replace(/'/g, "\\'")}')" title="Copy Formula" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                </button>
+              </div>
+
+              <!-- Rearrangements -->
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span class="text-[11px] font-semibold text-slate-400">Rearranged:</span>
+                ${eq.rearrangements.map(r => `<span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-300">${r}</span>`).join("")}
+              </div>
+
+              <!-- Variables & SI Units -->
+              <div class="space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                ${eq.variables.map(v => `
+                  <div class="flex items-baseline justify-between text-xs gap-2">
+                    <div>
+                      <span class="font-mono font-bold text-indigo-600 dark:text-indigo-400">${v.sym}</span>
+                      <span class="text-slate-600 dark:text-slate-300"> = ${v.desc}</span>
+                    </div>
+                    <span class="font-mono text-[11px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 shrink-0">${v.unit}</span>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+
+            <!-- Exam Tip Footer -->
+            <div class="rounded-xl bg-amber-50/70 dark:bg-amber-950/25 border border-amber-200/70 dark:border-amber-800/40 p-2.5 text-xs text-amber-900 dark:text-amber-200/90 leading-relaxed">
+              <strong class="font-bold">Exam Tip:</strong> ${eq.tip}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // ==========================================
+    // 9. RENDER REVISION TOPICS & RAG
+    // ==========================================
+    function renderTopics() {
+      const q = searchQuery.toLowerCase().trim();
+      const filtered = topicsData.filter(t => {
+        if (currentTopic !== "ALL" && t.topic !== currentTopic) return false;
+        if (!q) return true;
+        const haystack = [
+          t.title,
+          ...t.bullets.map(b => `${b.heading} ${b.points.join(" ")}`)
+        ].join(" ").toLowerCase();
+        return haystack.includes(q);
+      });
+
+      if (filtered.length === 0) {
+        topicsContainer.innerHTML = `
+          <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 text-center border border-slate-200 dark:border-slate-800">
+            <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">No revision notes match your current filter or search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      topicsContainer.innerHTML = filtered.map(t => {
+        const badgeStyle = getTopicBadgeClasses(t.topic);
+        const status = ragState[t.id] || "none";
+        const borderHighlight =
+          status === "green" ? "border-l-4 border-l-emerald-500" :
+          status === "amber" ? "border-l-4 border-l-amber-500" :
+          status === "red" ? "border-l-4 border-l-rose-500" : "";
+
+        return `
+          <details open class="topic-card group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 ${borderHighlight} shadow-sm overflow-hidden">
+            <summary class="list-none cursor-pointer p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 select-none hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border ${badgeStyle}">${t.topic}</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">${t.title}</h3>
+              </div>
+
+              <div class="flex items-center justify-between sm:justify-end gap-3" onclick="event.stopPropagation()">
+                <!-- RAG Selector Buttons -->
+                <div class="inline-flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+                  <button onclick="setRagStatus('${t.id}', 'red')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${status === 'red' ? 'bg-rose-500 text-white shadow-sm' : 'text-slate-500 hover:text-rose-500'}">Red</button>
+                  <button onclick="setRagStatus('${t.id}', 'amber')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${status === 'amber' ? 'bg-amber-500 text-white shadow-sm' : 'text-slate-500 hover:text-amber-500'}">Amber</button>
+                  <button onclick="setRagStatus('${t.id}', 'green')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${status === 'green' ? 'bg-emerald-500 text-white shadow-sm' : 'text-slate-500 hover:text-emerald-500'}">Green</button>
+                </div>
+
+                <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
+
+            <div class="px-4 sm:px-5 pb-5 pt-2 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-4">
+              ${t.bullets.map(b => `
+                <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/60 p-4 space-y-2.5">
+                  <h4 class="text-sm font-bold text-indigo-700 dark:text-indigo-300">${b.heading}</h4>
+                  <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed list-disc pl-4">
+                    ${b.points.map(pt => `<li>${pt}</li>`).join("")}
+                  </ul>
+                </div>
+              `).join("")}
+            </div>
+          </details>
+        `;
+      }).join("");
+    }
+
+    // ==========================================
+    // 10. VIEW & FILTER EVENT LISTENERS
+    // ==========================================
+    document.querySelectorAll(".view-tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentView = btn.dataset.view;
+        document.querySelectorAll(".view-tab").forEach(b => {
+          const active = b.dataset.view === currentView;
+          b.className = active
+            ? "view-tab flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center justify-center gap-2 bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm"
+            : "view-tab flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white";
+        });
+
+        document.getElementById("equationsView").classList.toggle("hidden", currentView !== "equations");
+        document.getElementById("notesView").classList.toggle("hidden", currentView !== "notes");
+      });
+    });
+
+    document.querySelectorAll(".topic-filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentTopic = btn.dataset.topic;
+        document.querySelectorAll(".topic-filter").forEach(b => {
+          const isSelected = b.dataset.topic === currentTopic;
+          if (isSelected) {
+            b.classList.add("ring-2", "ring-indigo-500", "ring-offset-2", "dark:ring-offset-slate-900");
+          } else {
+            b.classList.remove("ring-2", "ring-indigo-500", "ring-offset-2", "dark:ring-offset-slate-900");
+          }
+        });
+        renderEquations();
+        renderTopics();
+      });
+    });
+
+    searchInput.addEventListener("input", e => {
+      searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle("hidden", !searchQuery);
+      renderEquations();
+      renderTopics();
+    });
+
+    clearSearchBtn.addEventListener("click", () => {
+      searchQuery = "";
+      searchInput.value = "";
+      clearSearchBtn.classList.add("hidden");
+      renderEquations();
+      renderTopics();
+    });
+
+    sheetStatusFilter.addEventListener("change", e => {
+      sheetFilter = e.target.value;
+      renderEquations();
+    });
+
+    document.getElementById("expandAllBtn").addEventListener("click", () => {
+      document.querySelectorAll(".topic-card").forEach(d => d.open = true);
+    });
+    document.getElementById("collapseAllBtn").addEventListener("click", () => {
+      document.querySelectorAll(".topic-card").forEach(d => d.open = false);
+    });
+
+    // ==========================================
+    // 11. FLASHCARD QUIZ MODAL LOGIC
+    // ==========================================
+    const quizModal = document.getElementById("quizModal");
+    const flashcardBox = document.getElementById("flashcardBox");
+
+    function renderFlashcard() {
+      const card = flashcardsData[quizIndex];
+      document.getElementById("quizBadge").textContent = card.topic;
+      document.getElementById("quizCounter").textContent = `Card ${quizIndex + 1} / ${flashcardsData.length}`;
+      document.getElementById("flashcardLabel").textContent = isCardFlipped ? "Answer" : "Question / Prompt";
+      document.getElementById("flashcardLabel").className = isCardFlipped
+        ? "text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2"
+        : "text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2";
+      document.getElementById("flashcardContent").innerHTML = (isCardFlipped ? card.a : card.q).replace(/\n/g, "<br>");
+      document.getElementById("flashcardHint").textContent = isCardFlipped ? "Tap card to see question again" : "Tap card to reveal answer";
+    }
+
+    document.getElementById("openQuizBtn").addEventListener("click", () => {
+      isCardFlipped = false;
+      renderFlashcard();
+      quizModal.classList.remove("hidden");
+    });
+
+    document.getElementById("closeQuizBtn").addEventListener("click", () => {
+      quizModal.classList.add("hidden");
+    });
+
+    quizModal.addEventListener("click", e => {
+      if (e.target === quizModal) quizModal.classList.add("hidden");
+    });
+
+    function flipCard() {
+      isCardFlipped = !isCardFlipped;
+      renderFlashcard();
+    }
+
+    flashcardBox.addEventListener("click", flipCard);
+    document.getElementById("flipCardBtn").addEventListener("click", flipCard);
+
+    document.getElementById("nextCardBtn").addEventListener("click", () => {
+      quizIndex = (quizIndex + 1) % flashcardsData.length;
+      isCardFlipped = false;
+      renderFlashcard();
+    });
+
+    document.getElementById("prevCardBtn").addEventListener("click", () => {
+      quizIndex = (quizIndex - 1 + flashcardsData.length) % flashcardsData.length;
+      isCardFlipped = false;
+      renderFlashcard();
+    });
+
+    // ==========================================
+    // 12. INITIALIZE APP
+    // ==========================================
+    updateRagSummary();
+    renderEquations();
+    renderTopics();
+  </script>
+</body>
+</html>
